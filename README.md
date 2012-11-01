@@ -45,6 +45,11 @@ and the Arduino library for coordinates transformation (Matrix Method implementa
 Software to control the "Laser pointer device" with Stellarium, including GUI.
 
 
+### docs folder
+
+Datasheets and Matrix method documentation.
+
+
 ### bitstring-3.0.2 folder
 
 A Python module that makes the creation, manipulation and analysis of binary data as simple and natural as possible.
