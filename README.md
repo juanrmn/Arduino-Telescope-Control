@@ -9,7 +9,7 @@ By the moment, the code has been tested only in a mini-dobsonian mount with a gr
 of a real telescope. The laser points towards the celestial objects indicated from Stellarium, by using a
 stepper motors system.
 
-![Device](https://raw.github.com/juanrmn/Arduino-Telescope/master/images/photo_1_small.jpg)
+![Device](https://raw.github.com/juanrmn/Arduino-Telescope-Control/master/images/photo_1_small.jpg)
 
 You can see more images, schematics and parts details in the images folder.
 
