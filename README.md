@@ -3,7 +3,7 @@ Control telescope with Stellarium and Arduino
 
 
 This project consists on a first approach to control a telescope mechanism, builded from scratch and
-based on Arduino microcontroller, from a computer *with GNU/Linux* and the Stellarium software.
+based on Arduino microcontroller, from a computer **with GNU/Linux** and the Stellarium software.
 
 By the moment, the code has been tested only in a mini-dobsonian mount with a green laser pointer instead 
 of a real telescope. The laser points towards the celestial objects indicated from Stellarium, by using a
