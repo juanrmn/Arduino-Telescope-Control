@@ -12,7 +12,7 @@ GUI with:
 	./laser_control_main.py
 
 
-![GUI](https://raw.github.com/juanrmn/Arduino-Telescope/master/images/gui.jpg)
+![GUI](https://raw.github.com/juanrmn/Arduino-Telescope-Control/master/images/gui.jpg)
 
 
 *Note that two reference objects are required for initial configuration in order to obtain the transformation
