@@ -27,7 +27,7 @@ Data:
 	Mars			13h17m55s/-8º29'04''	22h07m51s	240º18'46''/21º04'41''
 
 
-Example with given data and the ipython console output (Note the RECV lines with the results):
+Example with given data and the ipython console output _(Note the RECV lines with the results)_:
 
 	In [1]: from testing import *
 
