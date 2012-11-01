@@ -5,24 +5,24 @@ Getting and showing the equatorial coordinates sent from Stellarium.
 
 ### Stellarium configuration
 
-Configuration window -> Plugins -> Telescope Control -> Configure -> Add
+> Configuration window -> Plugins -> Telescope Control -> Configure -> Add
 
 In that window you can introduce the configuration data:
 
-	Telescope controlled by:	*External Software or a remote computer*
-	Name:	*Laser pointer* (or whatever you want..)
+* Telescope controlled by:	**External Software or a remote computer**
+	* Name:	**Laser pointer** (or whatever you want..)
 
-	Connection settings:
-		IP:		*localhost*
-		Port:	*10001*
-	
-	User interface settings:
-		*Use field of view indicators*
+* Connection settings:
+	* IP:	**localhost**
+	* Port:	**10001**
+
+* User interface settings:
+	* **Use field of view indicators**
 
 
 ### Example of use:
 
-Once the "virtual telescope" is configured in Stellarium, you can send the selected object coordinates by "Ctrl + 1" keys.
+Once the "virtual telescope" is configured in Stellarium, you can send the selected object coordinates by **"Ctrl + 1"** keys.
 
 So now we start the server in order we can receive the coordinates, in console:
 

@@ -15,5 +15,5 @@ GUI with:
 ![GUI](https://raw.github.com/juanrmn/Arduino-Telescope-Control/master/images/gui.jpg)
 
 
-*Note that two reference objects are required for initial configuration in order to obtain the transformation
-matrix.*
+**Note that two reference objects are required for initial configuration in order to obtain the transformation
+matrix.**
