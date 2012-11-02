@@ -22,9 +22,9 @@ In that window you can introduce the configuration data:
 
 ### Example of use:
 
-Once the "virtual telescope" is configured in Stellarium, you can send the selected object coordinates by **"Ctrl + 1"** keys.
+Once the "virtual telescope" has been configured in Stellarium, you can send the selected object coordinates by **"Ctrl + 1"** keys.
 
-So now we start the server in order we can receive the coordinates, in console:
+So now we can start the server in order to receive the coordinates, in console:
 
 	./telescope_server.py
 	telescope_server.py: run - INFO: Telescope_Server 
