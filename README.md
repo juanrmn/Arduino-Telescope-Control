@@ -36,8 +36,8 @@ Device with Arduino:
 
 ### testing folder
 
-Contains the necessary scripts for testing by separate the communications with Stellarium, communications with the device, 
-and the Arduino library for coordinates transformation (Matrix Method implementation).
+Contains the necessary scripts for testing isolately the communications with Stellarium, communications with the device, 
+and the Arduino library for coordinate transformation (Matrix Method implementation).
 
 
 ### main folder
