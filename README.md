@@ -1,4 +1,4 @@
-Control telescope with Stellarium and Arduino
+Telescope control with Stellarium and Arduino
 ==============================================
 
 
