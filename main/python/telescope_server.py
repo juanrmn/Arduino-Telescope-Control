@@ -6,7 +6,6 @@ from PyQt4 import QtCore
 from threading import Thread
 import asyncore, socket
 from time import time, localtime
-from string import replace
 from bitstring import BitArray, BitStream, ConstBitStream # http://code.google.com/p/python-bitstring/
 import coords
 
@@ -113,7 +112,8 @@ class Telescope_Channel(QtCore.QThread, WrapperC):
 	def move(self, ra, dec):
 		msize = '0x1800'
 		mtype = '0x0000'
-		localtime = ConstBitStream(replace('int:64=%r' % time(), '.', ''))
+		aux_format_str = 'int:64=%r' % time()
+		localtime = ConstBitStream(aux_format_str.replace('.', ''))
 		
 		sdata = ConstBitStream(msize) + ConstBitStream(mtype)
 		sdata += ConstBitStream(intle=localtime.intle, length=64) + ConstBitStream(uintle=ra, length=32)

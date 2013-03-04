@@ -4,7 +4,6 @@
 import re
 import math
 import serial
-from string import replace
 
 ## \brief Class for testing purposes..
 #
