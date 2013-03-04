@@ -5,7 +5,6 @@ import math
 import re
 import logging
 from time import time, ctime, strftime, localtime
-from string import replace
 
 # \brief Functions library for format conversions.
 #
