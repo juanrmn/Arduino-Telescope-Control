@@ -12,18 +12,11 @@ import coords
 
 logging.basicConfig(level=logging.DEBUG, format="%(filename)s: %(funcName)s - %(levelname)s: %(message)s")
 
-## \brief Auxiliary Class.
-#
-#  Adapt the asyncore.dispatcher module to the Python 'new style' libraries, in which all classes inherit from
-#  object.
-class WrapperC(object, asyncore.dispatcher):
-	def __init__(self, sock):
-		asyncore.dispatcher.__init__(self, sock)
 
 ## \brief Implementation of the server side connection for 'Stellarium Telescope Protocol'
 #
 #  Manages the execution thread to the server side connection with Stellarium
-class Telescope_Channel(QtCore.QThread, WrapperC):
+class Telescope_Channel(QtCore.QThread, asyncore.dispatcher):
 	## @var stell_pos_recv
 	# It emits when equatorial coordinates are received from client (Stellarium)
 	stell_pos_recv = QtCore.pyqtSignal(str, str, str) #Ra, Dec, Time
@@ -34,7 +27,7 @@ class Telescope_Channel(QtCore.QThread, WrapperC):
 	def __init__(self, conn_sock):
 		self.is_writable = False
 		self.buffer = ''
-		WrapperC.__init__(self, conn_sock)
+		asyncore.dispatcher.__init__(self, conn_sock)
 		QtCore.QThread.__init__(self, None)
 		
 	## Indicates the socket is readable
@@ -133,7 +126,7 @@ class Telescope_Channel(QtCore.QThread, WrapperC):
 ## \brief Implementation of the server side communications for 'Stellarium Telescope Protocol'.
 #
 #  Each connection request generate an independent execution thread as instance of Telescope_Channel
-class Telescope_Server(QtCore.QThread, WrapperC):
+class Telescope_Server(QtCore.QThread, asyncore.dispatcher):
 	# @var stell_pos_recv
 	# Proxy signal to the same name signal of the Telescope_Channel instance
 	stell_pos_recv = QtCore.pyqtSignal(str, str, str) #Ra, Dec, Time
@@ -143,7 +136,7 @@ class Telescope_Server(QtCore.QThread, WrapperC):
 	# \param port Port to listen on
 	# \param pos-signal Signal that will receive the coordinates to send to Stellarium
 	def __init__(self, port=10001, pos_signal=None):
-		WrapperC.__init__(self, None)
+		asyncore.dispatcher.__init__(self, None)
 		QtCore.QThread.__init__(self, None)
 		self.tel = None
 		self.port = port
