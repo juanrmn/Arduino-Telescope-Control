@@ -82,7 +82,7 @@ class LaserDev (QtCore.QThread):
 			if line == '':
 				_count += 1
 			else:
-				print "__debug__: %s" % line
+				print("__debug__: %s" % line)
 			line = self.serial.readline().rstrip()
 		return line
 

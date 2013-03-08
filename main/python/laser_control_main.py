@@ -13,6 +13,16 @@ import coords
 from ldevice import LaserDev
 from repeat_timer import RepeatTimer
 
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    _fromUtf8 = lambda s: s
+
+try:
+    _toUtf8 = QtCore.QString.toUtf8
+except AttributeError:
+    _toUtf8 = lambda s: s
+
 logging.basicConfig(level=logging.DEBUG, format="%(filename)s: %(funcName)s - %(levelname)s: %(message)s")
 
 
@@ -43,12 +53,12 @@ class LaserControlMain(QtGui.QMainWindow):
 		self.ui.setupUi(self)
 		self.ui.Reconfigure.setVisible(False)
 
-		regex=QtCore.QRegExp("%s" % (QtCore.QString.fromUtf8("^-?[0-9]{1,3}(º|ᵒ)[0-9]{1,3}'[0-9]{1,3}([']{2}|\")$")))
+		regex=QtCore.QRegExp("%s" % (_fromUtf8("^-?[0-9]{1,3}(º|ᵒ)[0-9]{1,3}'[0-9]{1,3}([']{2}|\")$")))
 		self.Valid=QtGui.QRegExpValidator(regex, self)
 		self.ui.posHorizontal.setValidator(self.Valid)
 		self.ui.posVertical.setValidator(self.Valid)
-		self.ui.posHorizontal.setText("%s" % (QtCore.QString.fromUtf8("0º0'0''")))
-		self.ui.posVertical.setText("%s" % (QtCore.QString.fromUtf8("0º0'0''")))
+		self.ui.posHorizontal.setText("%s" % (_fromUtf8("0º0'0''")))
+		self.ui.posVertical.setText("%s" % (_fromUtf8("0º0'0''")))
 		self.ui.tabWidget.setCurrentIndex(1)
 		self.ui.tabWidget.setTabEnabled(1, False)
 
@@ -152,7 +162,7 @@ class LaserControlMain(QtGui.QMainWindow):
 			except:
 				logging.debug("Device not found..")
 				e = sys.exc_info()[1]
-				print "Error: %s" % e
+				print("Error: %s" % e)
 	
 	## Up key pushed
 	#
@@ -194,8 +204,8 @@ class LaserControlMain(QtGui.QMainWindow):
 	#  If the device is configured, sends the new coordinates to it
 	def posChanged(self):
 		logging.debug("(%s, %s)" % (self.ui.posHorizontal.text(), self.ui.posVertical.text()))
-		x = QtCore.QString.toUtf8(self.ui.posHorizontal.text())
-		y = QtCore.QString.toUtf8(self.ui.posVertical.text())
+		x = _toUtf8(self.ui.posHorizontal.text())
+		y = _toUtf8(self.ui.posVertical.text())
 		if self.device != None and (self._prev_pos[0]!=x or self._prev_pos[1]!=y):
 			logging.debug("Sending (%s, %s) to device" % (x, y))
 			self.device.move(x,y)
@@ -279,8 +289,8 @@ class LaserControlMain(QtGui.QMainWindow):
 	def init_received(self):
 		logging.debug("Init received")
 		self.pos = ('0.0000', '0.0000')
-		self.ui.posHorizontal.setText("%s" % QtCore.QString.fromUtf8("0º0'0''"))
-		self.ui.posVertical.setText("%s" % QtCore.QString.fromUtf8("0º0'0''"))
+		self.ui.posHorizontal.setText("%s" % _fromUtf8("0º0'0''"))
+		self.ui.posVertical.setText("%s" % _fromUtf8("0º0'0''"))
 		
 	## Receives the position updated signal from the device
 	#
@@ -288,8 +298,8 @@ class LaserControlMain(QtGui.QMainWindow):
 	def pos_received(self, x, y):
 		logging.debug("%s,%s" % (x, y))
 		self.pos = (x, y)
-		self.ui.posHorizontal.setText("%s" % QtCore.QString.fromUtf8(coords.deg_2_degStr(360.0 - coords.radStr_2_deg(self.pos[0]))))
-		self.ui.posVertical.setText("%s" % QtCore.QString.fromUtf8(coords.radStr_2_degStr(self.pos[1])))
+		self.ui.posHorizontal.setText("%s" % _fromUtf8(coords.deg_2_degStr(360.0 - coords.radStr_2_deg(self.pos[0]))))
+		self.ui.posVertical.setText("%s" % _fromUtf8(coords.radStr_2_degStr(self.pos[1])))
 		
 	## Receives the position updated signal from the device
 	#

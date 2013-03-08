@@ -49,7 +49,7 @@ class Testing():
 		while(resp != 'cmd'):
 			if(exp.match(resp)):
 				resp_d = resp.split(' ')
-				print "(%s / %s)" % (resp_d[0], resp_d[1])
+				print("(%s / %s)" % (resp_d[0], resp_d[1]))
 			resp = self.sread()
 
 	def movx(self, signDir):
@@ -66,7 +66,7 @@ class Testing():
 			if(exp.match(resp)):
 				resp = resp.replace("h_", '')
 				resp_d = resp.split(' ')
-				print "(%s / %s)" % (resp_d[0], resp_d[1])
+				print("(%s / %s)" % (resp_d[0], resp_d[1]))
 			resp = self.sread()
 
 	def setRef(self, id_ref, ra, dec, time, ac, alt):
@@ -80,7 +80,7 @@ class Testing():
 			self.serial.write(self.hours2rad(time))
 			self.serial.write(self.deg2rad(ac))
 			self.serial.write(self.deg2rad(alt))
-			print "SEND:	%s/%s - %s - %s/%s" % (self.hours2rad(ra), self.deg2rad(dec), self.hours2rad(time), self.deg2rad(ac), self.deg2rad(alt))
+			print("SEND:	%s/%s - %s - %s/%s" % (self.hours2rad(ra), self.deg2rad(dec), self.hours2rad(time), self.deg2rad(ac), self.deg2rad(alt)))
 			while(resp != 'cmd'):
 				resp = self.sread()
 
@@ -92,11 +92,11 @@ class Testing():
 			self.serial.write(self.hours2rad(ra))
 			self.serial.write(self.deg2rad(dec))
 			self.serial.write(self.hours2rad(time))
-			print "SEND:	%s/%s - %s" % (self.hours2rad(ra), self.deg2rad(dec), self.hours2rad(time))
+			print("SEND:	%s/%s - %s" % (self.hours2rad(ra), self.deg2rad(dec), self.hours2rad(time)))
 			while(resp != 'cmd'):
 				if(exp.match(resp)):
 					resp_d = resp.split(' ')
-					print "RECV:	%s/%s	(%s / %s)" % (resp_d[0], resp_d[1], self.rad2deg(resp_d[0]), self.rad2deg(resp_d[1]))
+					print("RECV:	%s/%s	(%s / %s)" % (resp_d[0], resp_d[1], self.rad2deg(resp_d[0]), self.rad2deg(resp_d[1])))
 				resp = self.sread()
 
 	# h =  HhMmSs => H+(M/60)+(S/60^2) hours
