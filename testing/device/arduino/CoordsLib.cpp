@@ -1,4 +1,5 @@
-#include "WProgram.h"
+// #include "WProgram.h" // Arduino < 1.0
+#include <Arduino.h> //Arduino >= 1.0
 #include "CoordsLib.h"
 
 CoordsLib::CoordsLib(){
