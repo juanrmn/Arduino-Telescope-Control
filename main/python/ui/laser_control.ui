@@ -502,7 +502,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Now you can start to use the device.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;The laser will points to the equatorial&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;coordinates received from Stellarium.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -542,7 +542,14 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>&amp;Device</string>
     </property>
-    <addaction name="action_Conectar"/>
+    <widget class="QMenu" name="menu_Connect">
+     <property name="title">
+      <string>&amp;Connect</string>
+     </property>
+     <addaction name="action_Refresh"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menu_Connect"/>
     <addaction name="action_Desconectar"/>
     <addaction name="separator"/>
     <addaction name="action_Recalibrar"/>
@@ -573,11 +580,6 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>&amp;Detener</string>
-   </property>
-  </action>
-  <action name="action_Conectar">
-   <property name="text">
-    <string>&amp;Connect</string>
    </property>
   </action>
   <action name="action_Desconectar">
@@ -614,6 +616,11 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>Recalibrar</string>
+   </property>
+  </action>
+  <action name="action_Refresh">
+   <property name="text">
+    <string>Refresh Port List</string>
    </property>
   </action>
  </widget>

@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './ui/laser_control.ui'
 #
-# Created: Sat Oct 27 13:17:22 2012
-#      by: PyQt4 UI code generator 4.8.3
+# Created: Sun Mar 31 15:52:08 2013
+#      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -123,8 +123,8 @@ class Ui_LaserControl(object):
         self.text_status = QtGui.QTextEdit(self.status_frame)
         self.text_status.setGeometry(QtCore.QRect(0, 0, 161, 31))
         font = QtGui.QFont()
-        font.setWeight(75)
         font.setBold(True)
+        font.setWeight(75)
         self.text_status.setFont(font)
         self.text_status.setReadOnly(True)
         self.text_status.setObjectName(_fromUtf8("text_status"))
@@ -142,8 +142,8 @@ class Ui_LaserControl(object):
         self.confMode = QtGui.QCheckBox(self.tab_config)
         self.confMode.setGeometry(QtCore.QRect(10, 10, 170, 22))
         font = QtGui.QFont()
-        font.setWeight(75)
         font.setBold(True)
+        font.setWeight(75)
         self.confMode.setFont(font)
         self.confMode.setObjectName(_fromUtf8("confMode"))
         self.textEdit = QtGui.QTextEdit(self.tab_config)
@@ -177,8 +177,8 @@ class Ui_LaserControl(object):
         self.trackMode = QtGui.QCheckBox(self.tab_move)
         self.trackMode.setGeometry(QtCore.QRect(10, 110, 260, 22))
         font = QtGui.QFont()
-        font.setWeight(75)
         font.setBold(True)
+        font.setWeight(75)
         self.trackMode.setFont(font)
         self.trackMode.setObjectName(_fromUtf8("trackMode"))
         self.textEdit_2 = QtGui.QTextEdit(self.tab_move)
@@ -199,6 +199,8 @@ class Ui_LaserControl(object):
         self.menu_Archivo.setObjectName(_fromUtf8("menu_Archivo"))
         self.menu_Dispositivo = QtGui.QMenu(self.menubar)
         self.menu_Dispositivo.setObjectName(_fromUtf8("menu_Dispositivo"))
+        self.menu_Connect = QtGui.QMenu(self.menu_Dispositivo)
+        self.menu_Connect.setObjectName(_fromUtf8("menu_Connect"))
         self.menu_Ayuda = QtGui.QMenu(self.menubar)
         self.menu_Ayuda.setObjectName(_fromUtf8("menu_Ayuda"))
         LaserControl.setMenuBar(self.menubar)
@@ -209,8 +211,6 @@ class Ui_LaserControl(object):
         self.action_Detener = QtGui.QAction(LaserControl)
         self.action_Detener.setEnabled(False)
         self.action_Detener.setObjectName(_fromUtf8("action_Detener"))
-        self.action_Conectar = QtGui.QAction(LaserControl)
-        self.action_Conectar.setObjectName(_fromUtf8("action_Conectar"))
         self.action_Desconectar = QtGui.QAction(LaserControl)
         self.action_Desconectar.setEnabled(False)
         self.action_Desconectar.setObjectName(_fromUtf8("action_Desconectar"))
@@ -225,8 +225,12 @@ class Ui_LaserControl(object):
         self.action_Recalibrar = QtGui.QAction(LaserControl)
         self.action_Recalibrar.setEnabled(False)
         self.action_Recalibrar.setObjectName(_fromUtf8("action_Recalibrar"))
+        self.action_Refresh = QtGui.QAction(LaserControl)
+        self.action_Refresh.setObjectName(_fromUtf8("action_Refresh"))
         self.menu_Archivo.addAction(self.action_Cerrar)
-        self.menu_Dispositivo.addAction(self.action_Conectar)
+        self.menu_Connect.addAction(self.action_Refresh)
+        self.menu_Connect.addSeparator()
+        self.menu_Dispositivo.addAction(self.menu_Connect.menuAction())
         self.menu_Dispositivo.addAction(self.action_Desconectar)
         self.menu_Dispositivo.addSeparator()
         self.menu_Dispositivo.addAction(self.action_Recalibrar)
@@ -288,22 +292,23 @@ class Ui_LaserControl(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Now you can start to use the device.</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;\"></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">The laser will points to the equatorial</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">coordinates received from Stellarium.</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_move), QtGui.QApplication.translate("LaserControl", "Pointing", None, QtGui.QApplication.UnicodeUTF8))
         self.menu_Archivo.setTitle(QtGui.QApplication.translate("LaserControl", "&File", None, QtGui.QApplication.UnicodeUTF8))
         self.menu_Dispositivo.setTitle(QtGui.QApplication.translate("LaserControl", "&Device", None, QtGui.QApplication.UnicodeUTF8))
+        self.menu_Connect.setTitle(QtGui.QApplication.translate("LaserControl", "&Connect", None, QtGui.QApplication.UnicodeUTF8))
         self.menu_Ayuda.setTitle(QtGui.QApplication.translate("LaserControl", "&Help", None, QtGui.QApplication.UnicodeUTF8))
         self.action_Cerrar.setText(QtGui.QApplication.translate("LaserControl", "&Quit", None, QtGui.QApplication.UnicodeUTF8))
         self.action_Iniciar.setText(QtGui.QApplication.translate("LaserControl", "&Iniciar", None, QtGui.QApplication.UnicodeUTF8))
         self.action_Detener.setText(QtGui.QApplication.translate("LaserControl", "&Detener", None, QtGui.QApplication.UnicodeUTF8))
-        self.action_Conectar.setText(QtGui.QApplication.translate("LaserControl", "&Connect", None, QtGui.QApplication.UnicodeUTF8))
         self.action_Desconectar.setText(QtGui.QApplication.translate("LaserControl", "&Desconectar", None, QtGui.QApplication.UnicodeUTF8))
         self.actionAcerca_de.setText(QtGui.QApplication.translate("LaserControl", "About ..", None, QtGui.QApplication.UnicodeUTF8))
         self.actionCargar.setText(QtGui.QApplication.translate("LaserControl", "Cargar", None, QtGui.QApplication.UnicodeUTF8))
         self.actionGuardar_configuraci_n.setText(QtGui.QApplication.translate("LaserControl", "Guardar en archivo", None, QtGui.QApplication.UnicodeUTF8))
         self.actionCargar_configuraci_n.setText(QtGui.QApplication.translate("LaserControl", "Cargar desde archivo", None, QtGui.QApplication.UnicodeUTF8))
         self.action_Recalibrar.setText(QtGui.QApplication.translate("LaserControl", "Recalibrar", None, QtGui.QApplication.UnicodeUTF8))
+        self.action_Refresh.setText(QtGui.QApplication.translate("LaserControl", "Refresh Port List", None, QtGui.QApplication.UnicodeUTF8))
 
 import icons_set_rc
