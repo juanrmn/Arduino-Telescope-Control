@@ -33,3 +33,4 @@ So now we can start the server in order to receive the coordinates, in console:
 	coords.py: *rad_2_stellarium_protocol - DEBUG: (hours, degrees): (10.800277, 1.503900) -> (10h48m1.0s, 1º30'14'')*
 
 
+([More info...](http://yoestuveaqui.es/blog/?p=313))
