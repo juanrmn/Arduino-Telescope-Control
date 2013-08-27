@@ -55,3 +55,5 @@ Example with given data and the ipython console output _(Note the RECV lines wit
 	SEND:	+3.481568/-0.148081 - +5.793839
 	RECV:	-2.088903/0.367851	(240º18'53'' / 21º4'35'')
 
+
+([More info...](http://yoestuveaqui.es/blog/communications-between-python-and-arduino-usb-serial/))
