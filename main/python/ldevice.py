@@ -216,8 +216,10 @@ def get_avalilable_ports():
     #else:
     
     # We only want the USB-Serial ports:
+    regex = re.compile('/dev/tty(USB|ACM)[0-9]+')
+
     for port in list_ports.comports():
-        if port[0].find('USB') != -1:
+        if regex.match(port[0]):
             available.append(port[0])
     
     return available
