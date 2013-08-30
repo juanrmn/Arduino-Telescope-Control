@@ -337,7 +337,7 @@ p, li { white-space: pre-wrap; }
     </property>
     <widget class="QWidget" name="tab_config">
      <attribute name="title">
-      <string>Confituration</string>
+      <string>Configuration</string>
      </attribute>
      <widget class="QCheckBox" name="confMode">
       <property name="geometry">
