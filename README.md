@@ -22,7 +22,7 @@ one for Arduino microcontroller (device):
 
 In the computer side with Python:
 
-* Communications with Stellarium ([Stellarium Telescope Protocol](http://www.stellarium.org/wiki/index.php/Telescope_Control_(client-server\)), [python-bitstring](http://code.google.com/p/python-bitstring/))
+* Communications with Stellarium ([Stellarium Telescope Protocol](http://www.stellarium.org/wiki/index.php/Telescope_Control_(client-server\)), [python-bitstring](http://code.google.com/p/python-bitstring/)))
 * Communications with the device (USB-Serial)
 * User interface (PyQt4)
 
@@ -57,3 +57,7 @@ A Python module that makes the creation, manipulation and analysis of binary dat
 Bitstring project page: http://code.google.com/p/python-bitstring/
 
 
+More Info
+---------
+http://yoestuve.es/blog/telescope-control-with-stellarium-and-arduino/
+http://yoestuve.es/blog/category/laser-pointer/
