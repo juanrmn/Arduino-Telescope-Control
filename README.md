@@ -57,9 +57,3 @@ A Python module that makes the creation, manipulation and analysis of binary dat
 Bitstring project page: http://code.google.com/p/python-bitstring/
 
 
-More Info
----------
-
-http://yoestuve.es/blog/telescope-control-with-stellarium-and-arduino/
-
-http://yoestuve.es/blog/category/laser-pointer/
